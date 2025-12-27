@@ -13,7 +13,10 @@ data:
         kubernetes_sd_configs:
           - role: node
 
+#      - job_name: "prometheus"
+#        static_configs:
+#          - targets: ["localhost:9090"]
+
       - job_name: "prometheus"
         static_configs:
-          - targets: ["localhost:9090"]
-
+          - targets: ["prometheus.monitoring.svc.cluster.local:9090"]
