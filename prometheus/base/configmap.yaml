@@ -1,4 +1,4 @@
-apiVersion: v1
+  apiVersion: v1
 kind: ConfigMap
 metadata:
   name: prometheus-config
@@ -12,3 +12,7 @@ data:
       - job_name: "kubernetes-nodes"
         kubernetes_sd_configs:
           - role: node
+
+      - job_name: 'prometheus'
+        static_configs:
+          - targets: ['localhost:9090']
